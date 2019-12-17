@@ -1,4 +1,6 @@
 import React from 'react';
+
+import StoreVcontainer from './containers/StoreVcontainer'
 import './App.css';
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
           <div className="col-4"></div>
         </div>
       </header>
+      <StoreVcontainer />
     </div>
   );
 }
