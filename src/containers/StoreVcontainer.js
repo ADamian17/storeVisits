@@ -39,7 +39,7 @@ const inCount = this.state.dayData.map((days, index) =>  <DaysCount key={index} 
    <> 
     <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-link">refresh</button>
+            <button type="button" className="btn btn-link" onClick={this.getData}>refresh</button>
           </div>  
         </div>
     <div>
