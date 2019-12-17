@@ -15,7 +15,9 @@ function App() {
           <div className="col-4"></div>
         </div>
       </header>
-      <StoreVcontainer />
+      <main>
+        <StoreVcontainer />
+      </main>
     </div>
   );
 }
