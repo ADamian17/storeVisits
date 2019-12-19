@@ -6,16 +6,52 @@ class Chart extends Component {
 
    state = {
      chartdata: {
-       labels: ["jax", "daisy", "Adonis", "Margot" ],
+       labels: [],
        datasets: [{
          label: "in_count",
-         data: [5, 3, 20, 25 ],
+         data: [],
          backgroundColor: 'black'
        }] 
-     },
+     }
    }
 
-  render () {
+   componentDidUpdate (prevState) {
+    //  console.log(prevState.chartData)
+     if (this.props.chartData.length !== prevState.chartData.length ){
+      this.setData()
+      return 
+     }  
+   }
+
+  //  || (prevState !== undefined && this.props.chartData.length !== prevState.chartdata.labels.length) 
+   
+   setData = () => {
+     let labels = [];
+     let values = [];
+     this.props.chartData.map( (item) => {
+       values.push(item.in_count)
+       labels.push(item.date)
+     }) 
+     
+    //  ejemplo 1
+    //  this.state.chartdata.labels = labels
+    //  this.state.chartdata.datasets[0].data = values
+
+     this.setState({
+      //  chartdata: this.state.chartdata
+      //  ejemplo 2
+      chartdata: {
+        labels: labels,
+        datasets: [{
+          label: "in_count",
+          data: values,
+          backgroundColor: 'black'
+        }] 
+      }
+     })
+   }
+
+  render () { 
     return (
       <div className="container">
        <HorizontalBar

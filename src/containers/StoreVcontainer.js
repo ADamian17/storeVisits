@@ -9,50 +9,53 @@ import Chart from '../components/Chart/Chart';
 class StoreVcontainer extends Component {
 
   state = {
-    dayData: [],
-    token: '' 
+    chartdata: [],
+    token: ''
   }
 
 
   componentDidMount () {
-    this.getData() 
+    this.getData(false) 
   }
    
-  getData = async () => {
+  getData = async (update) => {
+
     const getToken = await axios.post("http://api.getdor.com/v1/tokens",
       {
         "refresh_token": "wSGgSqmSDKS4YPfMSHZ4YyiOpiNv"
       }
     ) 
-    const dayData = await axios.get("http://api.getdor.com/v1/teams/4/stores/4/days", {headers:{
+    const chartData = await axios.get("http://api.getdor.com/v1/teams/4/stores/4/days", {headers:{
       "authorization": `Bearer ${getToken.data.data.token}`,
       "Content-Type": "application/json"
     }})
+
+    //  if (update){
+    //   chartData.data.data.pop()
+    //  }
+    //  console.log(chartData.data.data)
+    
     this.setState({
-      dayData: dayData.data.data,
+      chartdata: chartData.data.data,
       token: getToken.data.data.token
     })
   }
   
-  handleRefresh = (event) => {
-    console.log("click")
-   event.preventDefault()
-   this.getData()
+  handleRefresh = () => {
+    this.getData(true)
   }
   
+  
 render () {
-
-// const inCount = this.state.dayData.map((days, index) =>  <DaysCount key={index} daysCount={days}/>)
   return (
    <> 
     <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button><sapan>Last Update {this.state.dayData.meta}</sapan>
+            <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button>
           </div>  
         </div>
     <div>
-      {/* {inCount} */}
-      <Chart dayData={this.state.dayData}/>
+      <Chart chartData={this.state.chartdata}/>
     </div>
   </>  
   )
