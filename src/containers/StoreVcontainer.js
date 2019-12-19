@@ -10,12 +10,14 @@ class StoreVcontainer extends Component {
 
   state = {
     chartdata: [],
-    token: ''
+    token: '',
+    refreshtoken: ''
   }
 
 
   componentDidMount () {
-    this.getData(false) 
+    this.getData()
+    this.handleRefresh() 
   }
    
   getData = async (update) => {
@@ -33,20 +35,23 @@ class StoreVcontainer extends Component {
     //  if (update){
     //   chartData.data.data.pop()
     //  }
-    //  console.log(chartData.data.data)
+     console.log(chartData.data.data)
     
     this.setState({
       chartdata: chartData.data.data,
-      token: getToken.data.data.token
+      token: getToken.data.data.token,
+      refreshtoken: getToken.data.data.refresh_token
     })
   }
   
   handleRefresh = () => {
-    this.getData(true)
+    this.getData();
   }
   
   
 render () {
+  // const refreshToken = this.state.refreshtoken
+  // console.log(refreshToken)
   return (
    <> 
     <div className="row">
