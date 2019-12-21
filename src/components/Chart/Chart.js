@@ -49,19 +49,19 @@ class Chart extends Component {
    }
 
   render () { 
-    // if (!this.props.chartData.in_count && this.state.chartdata) {
-    //   return (
-    //     <div className="row align-items-center">
-    //       <div className="col"></div>
-    //       <div className="col-9 text-center">
-    //         <div className="spinner-border " role="status">
-    //          <span className="sr-only">...Loading...</span>
-    //        </div>
-    //       </div>
-    //       <div className="col"></div>
-    //     </div>
-    //   )
-    // }
+    if (!this.props.chartData && this.state.chartdata) {
+      return (
+        <div className="row align-items-center">
+          <div className="col"></div>
+          <div className="col-9 text-center">
+            <div className="spinner-border " role="status">
+             <span className="sr-only">...Loading...</span>
+           </div>
+          </div>
+          <div className="col"></div>
+        </div>
+      )
+    }
     return (
      <> 
       <div className="row">

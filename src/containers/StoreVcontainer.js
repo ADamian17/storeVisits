@@ -53,7 +53,7 @@ class StoreVcontainer extends Component {
 
 render () {
   return (
-   <> 
+   <div className=""> 
     <div className="row p-2">
       <div className="col">
         <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button><span><b>Last update {this.state.requestedAt}</b></span>
@@ -64,7 +64,7 @@ render () {
         <Chart chartData={this.state.chartdata} />
       </div>
     </div>
-  </>  
+  </div>  
   )
 }
 }

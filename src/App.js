@@ -12,7 +12,7 @@ function App() {
           <div className="row flex-nowrap justify-content-between align-items-center">
             <div className="col"></div>
             <div className="col text-center">
-              <h1>Store Visits</h1>
+              <h3>Store Visits</h3>
             </div>
             <div className="col"></div>
           </div>
