@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="">
+    <div className="container-fluid">
      <div className="row">
        <div className="col">
         <div className="my-header p-2">
