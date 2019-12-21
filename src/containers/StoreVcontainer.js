@@ -18,7 +18,7 @@ class StoreVcontainer extends Component {
 
   componentDidMount () {
     this.getData()
-    this.handleRefresh() 
+    // this.handleRefresh() 
   }
    
   getData = async (update) => {
@@ -36,7 +36,6 @@ class StoreVcontainer extends Component {
     //  if (update){
     //   chartData.data.data.pop()
     //  }
-    //  console.log(chartData.data.data)
     
     this.setState({
       chartdata: chartData.data.data,
@@ -52,6 +51,7 @@ class StoreVcontainer extends Component {
   
 
 render () {
+  console.log(this.state.chartdata)
   return (
    <div className=""> 
     <div className="row p-2">
