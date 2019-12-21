@@ -11,7 +11,8 @@ class StoreVcontainer extends Component {
   state = {
     chartdata: [],
     token: '',
-    refreshtoken: ''
+    requestedAt: ''
+    // refreshtoken: ''
   }
 
 
@@ -35,12 +36,13 @@ class StoreVcontainer extends Component {
     //  if (update){
     //   chartData.data.data.pop()
     //  }
-     console.log(chartData.data.data)
+    //  console.log(chartData.data.data)
     
     this.setState({
       chartdata: chartData.data.data,
       token: getToken.data.data.token,
-      refreshtoken: getToken.data.data.refresh_token
+      requestedAt: new Date().toLocaleTimeString()
+      // refreshtoken: getToken.data.data.refresh_token
     })
   }
   
@@ -48,19 +50,20 @@ class StoreVcontainer extends Component {
     this.getData();
   }
   
-  
+
 render () {
-  // const refreshToken = this.state.refreshtoken
-  // console.log(refreshToken)
   return (
    <> 
     <div className="row">
-          <div className="col">
-            <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button>
-          </div>  
-        </div>
-    <div>
-      <Chart chartData={this.state.chartdata}/>
+      <div className="col">
+        <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button>
+      </div> 
+      <div className="col">Last update {this.state.requestedAt}</div> 
+    </div>
+    <div className="row">
+      <div className="col">
+        <Chart chartData={this.state.chartdata} />
+      </div>
     </div>
   </>  
   )

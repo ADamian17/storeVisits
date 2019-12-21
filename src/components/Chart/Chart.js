@@ -22,7 +22,6 @@ class Chart extends Component {
       return 
      }  
    }
-
   //  || (prevState !== undefined && this.props.chartData.length !== prevState.chartdata.labels.length) 
    
    setData = () => {
@@ -32,11 +31,9 @@ class Chart extends Component {
        values.push(item.in_count)
        labels.push(item.date)
      }) 
-     
     //  ejemplo 1
     //  this.state.chartdata.labels = labels
     //  this.state.chartdata.datasets[0].data = values
-
      this.setState({
       //  chartdata: this.state.chartdata
       //  ejemplo 2
@@ -52,17 +49,38 @@ class Chart extends Component {
    }
 
   render () { 
+    // if (!this.props.chartData.in_count && this.state.chartdata) {
+    //   return (
+    //     <div className="row align-items-center">
+    //       <div className="col"></div>
+    //       <div className="col-9 text-center">
+    //         <div className="spinner-border " role="status">
+    //          <span className="sr-only">...Loading...</span>
+    //        </div>
+    //       </div>
+    //       <div className="col"></div>
+    //     </div>
+    //   )
+    // }
     return (
-      <div className="container">
-       <HorizontalBar
-       data={this.state.chartdata} 
-        options={{
-          legend:{
-            display: true,
-          } 
-        }}  
-       />
+     <> 
+      <div className="row">
+        <div className="col"></div>
+        <div className="col-9">
+        <div className="container">
+          <HorizontalBar
+          data={this.state.chartdata} 
+            options={{
+              legend:{
+                display: true,
+              } 
+            }}  
+          />
+          </div>
+        </div>
+        <div className="col"></div>
       </div>
+    </>  
     )
   }
 } 
