@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StoreVcontainer from './containers/StoreVcontainer'
+import StoreVisitscontainer from './containers/StoreVisitContainer'
 import './App.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         </div>
        </div>
      </div> 
-      <StoreVcontainer />
+      <StoreVisitscontainer />
     </div>
   );
 }
