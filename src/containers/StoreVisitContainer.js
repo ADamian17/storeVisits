@@ -11,7 +11,8 @@ class StoreVcontainer extends Component {
   state = {
     chartData: [],
     token: '',
-    requestedAt: ''
+    requestedAt: '',
+    // date: ''
   }
 
 
@@ -37,30 +38,31 @@ class StoreVcontainer extends Component {
       requestedAt: new Date().toLocaleTimeString()
     })
   }
+
+
   
   handleRefresh = () => {
     this.getData();
   }
   
-
-render () {
-  const inCount = this.state.chartData.map((days, index) =>  <DaysCount key={index} daysCount={days}/>)
-  return (
-   <div className=""> 
-    <div className="row p-2">
-      <div className="col">
-        <button type="button" className="btn btn-link" onClick={this.handleRefresh}>refresh</button><span><b>Last update at {this.state.requestedAt}</b></span>
-      </div> 
-    </div>
-    <div className="row">
-      <div className="col">
-        {inCount}
-        {/* <Chart chartData={this.state.chartData} /> */}
+  render () {
+    const inCount = this.state.chartData.map((days, index) =>  <DaysCount key={index} daysCount={days}/>)
+    return (
+    <div> 
+      <div className="row p-2">
+        <div className="col">
+          <button type="button" className="btn btn-link" onClick={this.handleRefresh}>Refresh</button><span><b>Last update at {this.state.requestedAt}</b></span>
+        </div> 
       </div>
-    </div>
-  </div>  
-  )
-}
+      <div className="row p-2">
+        <div className="col">
+          {inCount}
+          {/* <Chart chartData={this.state.chartData} /> */}
+        </div>
+      </div>
+    </div>  
+    )
+  }
 }
 
 

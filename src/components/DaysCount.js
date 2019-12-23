@@ -7,28 +7,30 @@ const DaysCount = props => {
     height: `20px`,
     backgroundColor: `#000000`,
   }
-   
+  
   const date = props.daysCount.date
-  const inCount = props.daysCount.in_count
+  // const date = props.daysCount.date.split('-')
+  // const newDate = new Date(date[0], date[1] -1, date[2])
+  const storeCount = props.daysCount.in_count
 
   return (
-   <div className="container"> 
-     <div className="card">
-      <div className="card-body">
-        <div className="row justify-content-center">
-          <div className="col-3">
-           <h5 className="card-title text-center mt-2">{date}</h5>
-          </div>
-          <div className="col-6 pogressBar" >
-            <div className="mt-2" style={bar}></div>
-          </div>
-          <div className="col-3">
-           <h5 className="card-title mt-2 text-center">{inCount}</h5>
+    <> 
+      <div className="card">
+        <div className="card-body">
+          <div className="row justify-content-center">
+            <div className="col-3">
+            <h5 className="card-title text-center mt-2">{date}</h5>
+            </div>
+            <div className="col-6 pogressBar" >
+              <div className="mt-2" style={bar}></div>
+            </div>
+            <div className="col-3">
+            <h5 className="card-title mt-2 text-center">{storeCount}</h5>
+            </div>
           </div>
         </div>
-      </div>
-    </div>    
-  </div>  
+      </div>    
+    </>  
   )
 } 
 

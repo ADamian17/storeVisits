@@ -5,22 +5,17 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container-fluid">
-     <div className="row">
-       <div className="col">
-        <div className="my-header p-2">
-          <div className="row flex-nowrap justify-content-between align-items-center">
-            <div className="col"></div>
-            <div className="col text-center">
-              <h3>Store Visits</h3>
-            </div>
-            <div className="col"></div>
-          </div>
-        </div>
-       </div>
-     </div> 
-      <StoreVisitscontainer />
-    </div>
+    <>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-header">
+    <h3 className="text-center">Store Visits</h3>
+    </nav>
+
+    <main role="main" className="container">
+      <div className="my-3 p-3 bg-white rounded shadow-sm">
+        <StoreVisitscontainer />
+      </div>
+    </main>
+  </>  
   );
 }
 

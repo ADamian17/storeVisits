@@ -3,7 +3,6 @@ import { HorizontalBar } from 'react-chartjs-2';
 
 
 class Chart extends Component {
-
    state = {
      chartdata: {
        labels: [],
@@ -16,13 +15,11 @@ class Chart extends Component {
    }
 
    componentDidUpdate (prevState) {
-    //  console.log(prevState.chartData)
      if (this.props.chartData.length !== prevState.chartData.length ){
       this.setData()
       return 
      }  
    }
-  //  || (prevState !== undefined && this.props.chartData.length !== prevState.chartdata.labels.length) 
    
    setData = () => {
      let labels = [];
@@ -31,9 +28,11 @@ class Chart extends Component {
        values.push(item.in_count)
        labels.push(item.date)
      }) 
+     
     //  ejemplo 1
     //  this.state.chartdata.labels = labels
     //  this.state.chartdata.datasets[0].data = values
+
      this.setState({
       //  chartdata: this.state.chartdata
       //  ejemplo 2
