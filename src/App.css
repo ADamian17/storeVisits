@@ -4,6 +4,11 @@
   color: aliceblue;
 }
 
+.navTitle{
+  position: relative;
+  top: 40%;
+  left: 45%;
+}
 
 .btn{
   color: #ff0000 !important;

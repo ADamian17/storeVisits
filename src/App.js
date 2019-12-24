@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-header">
-    <h3 className="text-center">Store Visits</h3>
+      <h3 className="navTitle">Store Visits</h3>
     </nav>
 
     <main role="main" className="container">

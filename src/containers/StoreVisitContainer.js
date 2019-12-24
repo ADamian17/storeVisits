@@ -12,7 +12,6 @@ class StoreVcontainer extends Component {
     chartData: [],
     token: '',
     requestedAt: '',
-    // date: ''
   }
 
 
