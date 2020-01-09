@@ -11,10 +11,9 @@ const DaysCount = props => {
   
   const strDate = props.daysCount.date
   const date = new Date(strDate).toDateString()
-  const dateArr = date.split(/[ ,]+/)
+  const dateArr = date.split(/[ ,]+/) //split at the space
   const displayDate = `${dateArr[0]} ${dateArr[2]}`
   const storeCount = props.daysCount.in_count
-  
 
   return (
     <> 
