@@ -10,11 +10,11 @@ const DaysCount = props => {
   }
   
   const strDate = props.daysCount.date
-  // const date = props.daysCount.date.split('-')
-  // const newDate = new Date(date[1] -1, date[2])
-  // newDate.toString()
-  // console.log(newDate)
+  const date = new Date(strDate).toDateString()
+  const dateArr = date.split(/[ ,]+/)
+  const displayDate = `${dateArr[0]} ${dateArr[2]}`
   const storeCount = props.daysCount.in_count
+  
 
   return (
     <> 
@@ -22,7 +22,7 @@ const DaysCount = props => {
         <div className="card-body">
           <div className="row justify-content-center">
             <div className="col-3">
-            <h5 className="card-title text-center mt-2">{strDate}</h5>
+            <h5 className="card-title text-center mt-2">{displayDate}</h5>
             </div>
             <div className="col-6" >
               <div className="mt-2 pogressBar" style={bar}></div>
