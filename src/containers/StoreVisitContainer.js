@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 
@@ -19,7 +19,7 @@ class StoreVcontainer extends Component {
     this.getData()
   }
    
-  getData = async (update) => {
+  getData = async () => {
 
     const getToken = await axios.post("http://api.getdor.com/v1/tokens",
       {
