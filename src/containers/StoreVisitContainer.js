@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // import DaysCount from '../components/DaysCount';
 // import Chart from '../components/Chart/Chart';
-import SocialMediaFeed from './SocialMediaFeed/SocialMediaFeed';
+// import SocialMediaFeed from './SocialMediaFeed/SocialMediaFeed';
 
 
 class StoreVcontainer extends Component {

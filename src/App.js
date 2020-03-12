@@ -1,6 +1,7 @@
 import React from 'react';
 
-import StoreVisitscontainer from './containers/StoreVisitContainer'
+// import StoreVisitscontainer from './containers/StoreVisitContainer';
+import SocialMediaFeed from './containers/SocialMediaFeed/SocialMediaFeed';
 import './App.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
     <main role="main" className="container">
       <div className="my-3 p-3 bg-white rounded shadow-sm">
-        <StoreVisitscontainer />
+        <SocialMediaFeed />
       </div>
     </main>
   </>  

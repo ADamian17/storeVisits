@@ -3,6 +3,18 @@ import axios from 'axios';
 
 
 class SocialMediaFeed extends Component {
+
+  constructor () {
+    super()
+    this.state = {
+      access_token: '',
+      user_id: ''
+    } 
+  }
+
+
+
+  
   render () {
     return (
       <div>
