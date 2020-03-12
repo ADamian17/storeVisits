@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {formData, url } from '../../lib/Info';
+import { formData } from '../../lib/Info';
 
 
 class SocialMediaFeed extends Component {
@@ -9,7 +9,8 @@ class SocialMediaFeed extends Component {
     super()
     this.state = {
       access_token: '',
-      user_id: ''
+      user_id: '',
+      feedData: {}
     } 
   }
 
@@ -18,33 +19,41 @@ class SocialMediaFeed extends Component {
   }
 
  postData = async () => { 
-  
-  try {
-    const getAccess = await axios.post( url, {
 
-      headers: {
-        'Content-type': 'multipart/form-data'
-      },
-      data: formData,
-    });
-    console.log(getAccess)
+  try {
+    await fetch('https://api.instagram.com/oauth/access_token', {
+      method: 'POST',
+      body: formData
+    }).then((res) => {
+      return res.json() 
+    }).then((data) => {
+      this.setState({
+        access_token: data.access_token,
+        user_id: data.user_id
+      })
+    })
   } catch (error) {
     console.log(error)
   }
 
-  // .then((res) => {
-  //     return res.json() 
-  //   }).then((data) => {
-  //     // set the state here
-  //     console.log(data)
-  //     // this.setState({
-  //     //   access_token: getAccess.data.access_token,
-  //     //   user_id: getAccess.data.user_id
-  //     // });
-  //   }).catch((err) => console.log(err))
-}
-  render () {
+  try {
+    await axios.get('https://graph.instagram.com/', + (this.state.user_id), + '/media?fields=id,media_type,media_url,username,timestamp&access_token=', + (this.state.access_token)).then( (res) => {
+      return res.json()
+    }).then((data) => {
+      this.setState({
+        feedData: data.data
+      })
+    })
+  } catch (error) {
+    console.log(error)
+  }
     
+
+    
+}
+
+  render () {
+    console.log(this.state)
     return (
       <div>
         <h1>Instagram Feed</h1>

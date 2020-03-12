@@ -3,7 +3,7 @@ export  const urlCode = 'https://api.instagram.com/oauth/authorize?client_id=141
 
 
 // This info needs to be in a .evn file 
-export const code = 'AQCapLBAwMdvh4uqsFLgvKq4PYgtJFch4keOSKaOaSjIFrScIp6a2Ne33kD4BX896aEWu7bP9bFaRHsKXt1WS5FsZvnOLOnTkqEGAkBDs8HL5zWa-IGr1IUY9txndNlNnEXYFKAs2ez1dltlaRcQHCPjcHKAZomEsfsVeHPH9qW6taTCjxkdKpGQy5Xmew3-b9Ucni7vGNvLapo6GR0f-ZGCSE9V6H6BQloynoRJ6JKZ9A'; //numeric str require // code only last 1 hour
+export const code = 'AQAWZy01M1zYWOth7-SuJEGGlF2JIV_dRjP9wacq4rUL1jxsN4mtOHu_t2jxn7qvJgHJng3HyxPbaN_1aMNHZnZW-O0v15HhXvs0xRdN8B-ij1NTNfFIeqKoIc72_HhkxaNYab8rciIueQ8Un92E5mEDgtjAWxvpkb05AZ1N_QUAi6BsDpt64rPRozVfzEJKvzGtsHBhYEMS0AClcfKsj_dEwxGMET9va6rimccfVrwu6g'; //numeric str require // code only last 1 hour
  
 //#######################################################################################################//
 
@@ -16,7 +16,6 @@ formData.set('redirect_uri', 'https://adamian17.github.io/storeVisits/');
 formData.set('code', code);
 
  // ########################################################################//
-
 
 // NOTE Url Access
 export const url = 'https://api.instagram.com/oauth/access_token'; 
