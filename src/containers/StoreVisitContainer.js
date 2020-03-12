@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-import DaysCount from '../components/DaysCount';
+// import DaysCount from '../components/DaysCount';
 // import Chart from '../components/Chart/Chart';
+import SocialMediaFeed from './SocialMediaFeed/SocialMediaFeed';
 
 
 class StoreVcontainer extends Component {
@@ -45,17 +46,18 @@ class StoreVcontainer extends Component {
   }
   
   render () {
-    const inCount = this.state.chartData.map((days, index) =>  <DaysCount key={index} daysCount={days}/>)
+    // const inCount = this.state.chartData.map((days, index) =>  <DaysCount key={index} daysCount={days}/>)
     return (
     <div> 
       <div className="row p-2">
         <div className="col">
-          <button type="button" className="btn btn-link" onClick={this.handleRefresh}>Refresh</button><span><b>Last update at {this.state.requestedAt}</b></span>
+          {/* <button type="button" className="btn btn-link" onClick={this.handleRefresh}>Refresh</button><span><b>Last update at {this.state.requestedAt}</b></span> */}
         </div> 
       </div>
       <div className="row p-2">
         <div className="col">
-          {inCount}
+          < SocialMediaFeed />
+          {/* {inCount} */}
           {/* <Chart chartData={this.state.chartData} /> */}
         </div>
       </div>
