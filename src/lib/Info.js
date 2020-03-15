@@ -3,7 +3,7 @@ export  const urlCode = 'https://api.instagram.com/oauth/authorize?client_id=141
 
 
 // This info needs to be in a .evn file 
-export const code = 'AQAWZy01M1zYWOth7-SuJEGGlF2JIV_dRjP9wacq4rUL1jxsN4mtOHu_t2jxn7qvJgHJng3HyxPbaN_1aMNHZnZW-O0v15HhXvs0xRdN8B-ij1NTNfFIeqKoIc72_HhkxaNYab8rciIueQ8Un92E5mEDgtjAWxvpkb05AZ1N_QUAi6BsDpt64rPRozVfzEJKvzGtsHBhYEMS0AClcfKsj_dEwxGMET9va6rimccfVrwu6g'; //numeric str require // code only last 1 hour
+export const code = 'AQDKBjMfKYT7boB4JvkMJ-38JT8i3zRxNG9csXkcSKrWQMqGnMIRD14aiRu4ULCSwiK_gPg7Evd5gmYXbXqmQW-piLnZLVdnqtkErOMz-DQmDJPU1M9PPwMCF7JlGpbynnF7js5_cZ0DvbWEXQhPawnT1YFlTSM7eaHFnA_phNuActwC1Y8C1mxYOzt2xuky5iLybJ8mp2C3SdMX77Sn8yzR9YyoGMRVEP63er0MFiz69A'; //numeric str require // code only last 1 hour
  
 //#######################################################################################################//
 
